@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp
 {
-    partial class Form4
+    partial class Serilization_DEPT
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,10 @@
             this.button3_CreateFolder = new System.Windows.Forms.Button();
             this.button4_CreateFile = new System.Windows.Forms.Button();
             this.button_Clear = new System.Windows.Forms.Button();
+            this.button1_binaryWrite = new System.Windows.Forms.Button();
+            this.button2_BinaryRead = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -92,21 +96,21 @@
             // 
             // button1_Write
             // 
-            this.button1_Write.Location = new System.Drawing.Point(347, 323);
+            this.button1_Write.Location = new System.Drawing.Point(285, 323);
             this.button1_Write.Name = "button1_Write";
-            this.button1_Write.Size = new System.Drawing.Size(75, 23);
+            this.button1_Write.Size = new System.Drawing.Size(137, 23);
             this.button1_Write.TabIndex = 6;
-            this.button1_Write.Text = "Write To File";
+            this.button1_Write.Text = "Write To File Binary Write";
             this.button1_Write.UseVisualStyleBackColor = true;
             this.button1_Write.Click += new System.EventHandler(this.button1_Write_Click);
             // 
             // button2_Read
             // 
-            this.button2_Read.Location = new System.Drawing.Point(504, 323);
+            this.button2_Read.Location = new System.Drawing.Point(456, 323);
             this.button2_Read.Name = "button2_Read";
-            this.button2_Read.Size = new System.Drawing.Size(75, 23);
+            this.button2_Read.Size = new System.Drawing.Size(123, 23);
             this.button2_Read.TabIndex = 7;
-            this.button2_Read.Text = "Read From File";
+            this.button2_Read.Text = "Read From File Binary Read";
             this.button2_Read.UseVisualStyleBackColor = true;
             this.button2_Read.Click += new System.EventHandler(this.button2_Read_Click);
             // 
@@ -140,11 +144,53 @@
             this.button_Clear.UseVisualStyleBackColor = true;
             this.button_Clear.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form4
+            // button1_binaryWrite
+            // 
+            this.button1_binaryWrite.Location = new System.Drawing.Point(613, 90);
+            this.button1_binaryWrite.Name = "button1_binaryWrite";
+            this.button1_binaryWrite.Size = new System.Drawing.Size(137, 23);
+            this.button1_binaryWrite.TabIndex = 11;
+            this.button1_binaryWrite.Text = "Binary Write Serilizable";
+            this.button1_binaryWrite.UseVisualStyleBackColor = true;
+            this.button1_binaryWrite.Click += new System.EventHandler(this.button1_binaryWrite_Click);
+            // 
+            // button2_BinaryRead
+            // 
+            this.button2_BinaryRead.Location = new System.Drawing.Point(613, 172);
+            this.button2_BinaryRead.Name = "button2_BinaryRead";
+            this.button2_BinaryRead.Size = new System.Drawing.Size(137, 23);
+            this.button2_BinaryRead.TabIndex = 12;
+            this.button2_BinaryRead.Text = "Binary Read Serilizable";
+            this.button2_BinaryRead.UseVisualStyleBackColor = true;
+            this.button2_BinaryRead.Click += new System.EventHandler(this.button2_BinaryRead_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(621, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Binary Serilization Write";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(621, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Binary Serilization Read";
+            // 
+            // Serilization_DEPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button2_BinaryRead);
+            this.Controls.Add(this.button1_binaryWrite);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.button4_CreateFile);
             this.Controls.Add(this.button3_CreateFolder);
@@ -156,9 +202,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
-            this.Text = "Form4";
-            this.Load += new System.EventHandler(this.Form4_Load);
+            this.Name = "Serilization_DEPT";
+            this.Text = "Serilization_DEPT";
+           // this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +223,9 @@
         private System.Windows.Forms.Button button3_CreateFolder;
         private System.Windows.Forms.Button button4_CreateFile;
         private System.Windows.Forms.Button button_Clear;
+        private System.Windows.Forms.Button button1_binaryWrite;
+        private System.Windows.Forms.Button button2_BinaryRead;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

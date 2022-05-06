@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace WindowsFormsApp
 {
-    public partial class Form4 : Form
+    public partial class Serilization_DEPT : Form
     {
-        public Form4()
+        public Serilization_DEPT()
         {
             InitializeComponent();
         }
@@ -23,10 +24,7 @@ namespace WindowsFormsApp
 
         }
 
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button3_CreateFolder_Click(object sender, EventArgs e)
         {
@@ -125,6 +123,57 @@ namespace WindowsFormsApp
             textBox1_DeptId.Clear();
             textBox2_Name.Clear();
             textBox3_Location.Clear();
+        }
+
+        
+
+        private void button2_BinaryRead_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                fs = new FileStream(@"D:\New Test\dept", FileMode.Open, FileAccess.Read);
+                BinaryFormatter binary = new BinaryFormatter();
+                dept = (Department)binary.Deserialize(fs);
+                textBox1_DeptId.Text = dept.Id.ToString();
+                textBox2_Name.Text = dept.Name;
+                textBox3_Location.Text = dept.Location;
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+
+        }
+
+        private void button1_binaryWrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                dept.Id = Convert.ToInt32(textBox1_DeptId.Text);
+                dept.Name = textBox2_Name.Text;
+                dept.Location = textBox3_Location.Text;
+                fs = new FileStream(@"D:\New Test\dept", FileMode.Create, FileAccess.Write);
+                BinaryFormatter binary = new BinaryFormatter();
+                binary.Serialize(fs, dept);
+                MessageBox.Show("Done");
+            }
+            catch(Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+
         }
     }
 }
