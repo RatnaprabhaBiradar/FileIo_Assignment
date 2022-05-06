@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.Text.Json;
+
 
 namespace WindowsFormsApp
 {
@@ -23,15 +27,12 @@ namespace WindowsFormsApp
         {
 
         }
-
-       
-
         private void button3_CreateFolder_Click(object sender, EventArgs e)
         {
             try
             {
                 string path = @"D:\New Test";
-                if(Directory.Exists(path))
+                if (Directory.Exists(path))
                 {
                     MessageBox.Show("Folder already Present");
                 }
@@ -43,7 +44,7 @@ namespace WindowsFormsApp
                 }
 
             }
-            catch(Exception e1)
+            catch (Exception e1)
             {
                 MessageBox.Show(e1.Message);
             }
@@ -85,7 +86,7 @@ namespace WindowsFormsApp
                 bw.Write(textBox3_Location.Text);
                 bw.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -125,7 +126,7 @@ namespace WindowsFormsApp
             textBox3_Location.Clear();
         }
 
-        
+
 
         private void button2_BinaryRead_Click(object sender, EventArgs e)
         {
@@ -164,7 +165,7 @@ namespace WindowsFormsApp
                 binary.Serialize(fs, dept);
                 MessageBox.Show("Done");
             }
-            catch(Exception e1)
+            catch (Exception e1)
             {
                 MessageBox.Show(e1.Message);
             }
@@ -175,5 +176,145 @@ namespace WindowsFormsApp
             }
 
         }
+
+        private void button1_XmlWrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                dept.Id = Convert.ToInt32(textBox1_DeptId.Text);
+                dept.Name = textBox2_Name.Text;
+                dept.Location = textBox3_Location.Text;
+                fs = new FileStream(@"D:\New Test\deptXML", FileMode.Create, FileAccess.Write);
+                XmlSerializer xml = new XmlSerializer(typeof(Department));
+                xml.Serialize(fs, dept);
+                MessageBox.Show("done");
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+        }
+        private void button2_XMLRead_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                fs = new FileStream(@"D:\New Test\deptXML", FileMode.Open, FileAccess.Read);
+                XmlSerializer xml = new XmlSerializer(typeof(Department));
+                dept = (Department)xml.Deserialize(fs);
+                textBox1_DeptId.Text = dept.Id.ToString();
+                textBox2_Name.Text = dept.Name;
+                textBox3_Location.Text = dept.Location;
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+        }
+        private void button1_SOAPWrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                dept.Id = Convert.ToInt32(textBox1_DeptId.Text);
+                dept.Name = textBox2_Name.Text;
+                dept.Location = textBox3_Location.Text;
+                fs = new FileStream(@"D:\New Test\deptSOAP", FileMode.Create, FileAccess.Write);
+                SoapFormatter soap = new SoapFormatter();
+                soap.Serialize(fs, dept);
+                MessageBox.Show("Done");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+        }
+
+        private void button2_SOAP_Read_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                fs = new FileStream(@"D:\New Test\deptSOAP", FileMode.Open, FileAccess.Read);
+                SoapFormatter soap = new SoapFormatter();
+                dept = (Department)soap.Deserialize(fs);
+                textBox1_DeptId.Text = dept.Id.ToString();
+                textBox2_Name.Text = dept.Name;
+                textBox3_Location.Text = dept.Location;
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+        }
+
+        private void button1_JsonWrite_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                Department dept = new Department();
+                dept.Id = Convert.ToInt32(textBox1_DeptId.Text);
+                dept.Name = textBox2_Name.Text;
+                dept.Location = textBox3_Location.Text;
+                fs = new FileStream(@"D:\New Test\deptJson", FileMode.Create, FileAccess.Write);
+                JsonSerializer.Serialize(fs, dept);
+                MessageBox.Show("Done");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+            }
+        }
+
+        private void button2_JsonRead_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Department dept = new Department();
+                fs = new FileStream(@"D:\New Test\deptJson", FileMode.Open, FileAccess.Read);
+
+                dept =JsonSerializer.Deserialize<Department>(fs);
+                textBox1_DeptId.Text = dept.Id.ToString();
+                textBox2_Name.Text = dept.Name;
+                textBox3_Location.Text = dept.Location;
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                fs.Close();
+
+            }
+        }
     }
-}
+ }

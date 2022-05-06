@@ -43,6 +43,16 @@
             this.button2_BinaryRead = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1_XmlWrite = new System.Windows.Forms.Button();
+            this.button2_XMLRead = new System.Windows.Forms.Button();
+            this.button1_SOAPWrite = new System.Windows.Forms.Button();
+            this.button2_SOAP_Read = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1_JsonWrite = new System.Windows.Forms.Button();
+            this.button2_JsonRead = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -182,11 +192,117 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Binary Serilization Read";
             // 
+            // button1_XmlWrite
+            // 
+            this.button1_XmlWrite.Location = new System.Drawing.Point(624, 221);
+            this.button1_XmlWrite.Name = "button1_XmlWrite";
+            this.button1_XmlWrite.Size = new System.Drawing.Size(75, 23);
+            this.button1_XmlWrite.TabIndex = 15;
+            this.button1_XmlWrite.Text = "XML write";
+            this.button1_XmlWrite.UseVisualStyleBackColor = true;
+            this.button1_XmlWrite.Click += new System.EventHandler(this.button1_XmlWrite_Click);
+            // 
+            // button2_XMLRead
+            // 
+            this.button2_XMLRead.Location = new System.Drawing.Point(624, 278);
+            this.button2_XMLRead.Name = "button2_XMLRead";
+            this.button2_XMLRead.Size = new System.Drawing.Size(75, 23);
+            this.button2_XMLRead.TabIndex = 16;
+            this.button2_XMLRead.Text = "XML Read";
+            this.button2_XMLRead.UseVisualStyleBackColor = true;
+            this.button2_XMLRead.Click += new System.EventHandler(this.button2_XMLRead_Click);
+            // 
+            // button1_SOAPWrite
+            // 
+            this.button1_SOAPWrite.Location = new System.Drawing.Point(149, 200);
+            this.button1_SOAPWrite.Name = "button1_SOAPWrite";
+            this.button1_SOAPWrite.Size = new System.Drawing.Size(75, 23);
+            this.button1_SOAPWrite.TabIndex = 17;
+            this.button1_SOAPWrite.Text = "SOAP Write";
+            this.button1_SOAPWrite.UseVisualStyleBackColor = true;
+            this.button1_SOAPWrite.Click += new System.EventHandler(this.button1_SOAPWrite_Click);
+            // 
+            // button2_SOAP_Read
+            // 
+            this.button2_SOAP_Read.Location = new System.Drawing.Point(149, 265);
+            this.button2_SOAP_Read.Name = "button2_SOAP_Read";
+            this.button2_SOAP_Read.Size = new System.Drawing.Size(75, 23);
+            this.button2_SOAP_Read.TabIndex = 18;
+            this.button2_SOAP_Read.Text = "SOAP Read";
+            this.button2_SOAP_Read.UseVisualStyleBackColor = true;
+            this.button2_SOAP_Read.Click += new System.EventHandler(this.button2_SOAP_Read_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(619, 265);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "XML serilization REad";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(621, 205);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "XML serilization Write";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(136, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(117, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "SOAP Serilization Write";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(135, 249);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "SOAP Serilization Read";
+            // 
+            // button1_JsonWrite
+            // 
+            this.button1_JsonWrite.Location = new System.Drawing.Point(144, 63);
+            this.button1_JsonWrite.Name = "button1_JsonWrite";
+            this.button1_JsonWrite.Size = new System.Drawing.Size(75, 23);
+            this.button1_JsonWrite.TabIndex = 23;
+            this.button1_JsonWrite.Text = "JSON Write";
+            this.button1_JsonWrite.UseVisualStyleBackColor = true;
+            this.button1_JsonWrite.Click += new System.EventHandler(this.button1_JsonWrite_Click);
+            // 
+            // button2_JsonRead
+            // 
+            this.button2_JsonRead.Location = new System.Drawing.Point(144, 138);
+            this.button2_JsonRead.Name = "button2_JsonRead";
+            this.button2_JsonRead.Size = new System.Drawing.Size(75, 23);
+            this.button2_JsonRead.TabIndex = 24;
+            this.button2_JsonRead.Text = "JSON Read";
+            this.button2_JsonRead.UseVisualStyleBackColor = true;
+            this.button2_JsonRead.Click += new System.EventHandler(this.button2_JsonRead_Click);
+            // 
             // Serilization_DEPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2_JsonRead);
+            this.Controls.Add(this.button1_JsonWrite);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button2_SOAP_Read);
+            this.Controls.Add(this.button1_SOAPWrite);
+            this.Controls.Add(this.button2_XMLRead);
+            this.Controls.Add(this.button1_XmlWrite);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2_BinaryRead);
@@ -204,7 +320,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Serilization_DEPT";
             this.Text = "Serilization_DEPT";
-           // this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +342,15 @@
         private System.Windows.Forms.Button button2_BinaryRead;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1_XmlWrite;
+        private System.Windows.Forms.Button button2_XMLRead;
+        private System.Windows.Forms.Button button1_SOAPWrite;
+        private System.Windows.Forms.Button button2_SOAP_Read;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1_JsonWrite;
+        private System.Windows.Forms.Button button2_JsonRead;
     }
 }
