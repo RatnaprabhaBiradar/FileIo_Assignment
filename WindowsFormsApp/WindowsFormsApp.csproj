@@ -80,6 +80,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Batch.cs" />
+    <Compile Include="BatchInfoBinaryReaderWriter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BatchInfoBinaryReaderWriter.Designer.cs">
+      <DependentUpon>BatchInfoBinaryReaderWriter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs" />
+    <Compile Include="BookInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookInformation.Designer.cs">
+      <DependentUpon>BookInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -99,12 +113,19 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product_Information.Designer.cs">
+      <DependentUpon>Product_Information.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notepadform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Notepadform.Designer.cs">
       <DependentUpon>Notepadform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="Serilization_DEPT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +140,12 @@
     <Compile Include="StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BatchInfoBinaryReaderWriter.resx">
+      <DependentUpon>BatchInfoBinaryReaderWriter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookInformation.resx">
+      <DependentUpon>BookInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product_Information.resx">
+      <DependentUpon>Product_Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notepadform.resx">
       <DependentUpon>Notepadform.cs</DependentUpon>

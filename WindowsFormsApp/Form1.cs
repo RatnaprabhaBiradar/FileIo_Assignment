@@ -26,5 +26,10 @@ namespace WindowsFormsApp
         {
 
         }
+
+        private void UsernameText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

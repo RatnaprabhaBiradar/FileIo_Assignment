@@ -147,9 +147,9 @@
             // 
             this.button1_WriteFile.Location = new System.Drawing.Point(285, 312);
             this.button1_WriteFile.Name = "button1_WriteFile";
-            this.button1_WriteFile.Size = new System.Drawing.Size(75, 23);
+            this.button1_WriteFile.Size = new System.Drawing.Size(107, 23);
             this.button1_WriteFile.TabIndex = 12;
-            this.button1_WriteFile.Text = "Write To File";
+            this.button1_WriteFile.Text = "Binary Write To File";
             this.button1_WriteFile.UseVisualStyleBackColor = true;
             this.button1_WriteFile.Click += new System.EventHandler(this.button1_WriteFile_Click);
             // 
@@ -159,7 +159,7 @@
             this.button2_Read.Name = "button2_Read";
             this.button2_Read.Size = new System.Drawing.Size(100, 23);
             this.button2_Read.TabIndex = 13;
-            this.button2_Read.Text = "Read From File";
+            this.button2_Read.Text = "Binary Read From File";
             this.button2_Read.UseVisualStyleBackColor = true;
             this.button2_Read.Click += new System.EventHandler(this.button2_Read_Click);
             // 
